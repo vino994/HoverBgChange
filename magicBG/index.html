@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hover to BackgroundChange</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <button id="btn"><h1>Magic Start</h1></button>
+    </section>
+    <script>
+        var container= document.querySelector('.container');
+        
+        for(var i=0;i<=1000;i++){
+            var span = document.createElement('span');
+            container.appendChild(span);
+        }
+
+        var spans = document.querySelectorAll('span');
+        document.getElementById('btn').addEventListener('click',()=>{
+            container.classList.toggle('active')
+        })
+    </script>
+</body>
+</html>

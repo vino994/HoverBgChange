@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    background-color: black;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+.container span{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    display: block;
+    animation: bgChange 2s linear infinite;
+    animation-play-state: paused;
+}
+@keyframes bgChange {
+    0%{
+        filter: hue-rotate(0);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+.container.active span{
+    animation-play-state: running;
+}
+.container span::before{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    content: '';
+    top: 0;
+    left: 0;
+    transform: scale(0.4);
+    transition: 2s;
+}
+.container span:hover::before{
+transition: 0s;
+transform: scale(5.5);
+}
+#btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px 40px;
+    width: 500px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+   box-shadow: 2px 2px 2px white;
+}
+#btn h1{
+    letter-spacing: 4px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+}
